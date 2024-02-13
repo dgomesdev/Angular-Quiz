@@ -2,20 +2,23 @@
     <div class="quiz-title center-elements">
       <hr />
       <h1>PEPITO QUIZ</h1>
-      <h3>Title</h3>
+      <h3>{{ title }}</h3>
       <hr />
     </div>
-    <div class="quiz-question center-elements">
-      <h3>Selected question</h3>
+    <div *ngIf="!isQuizFinished" class="quiz-question center-elements">
+      <h3>{{ selectedQuestion.question }}</h3>
     </div>
-    <div class="quiz-options center-elements">
-      <button class="btn-option">
-          Option name
+    <div *ngIf="!isQuizFinished" class="quiz-options center-elements">
+      <button 
+      *ngFor="let option of selectedQuestion.options; let i = index"
+      (click)="chooseOption(option.alias)"
+      class="btn-option">
+          {{ option.name }}
       </button>
     </div>
-    <div class="quiz-result center-elements">
-      <h1>Your result is:</h1>
-      <p>Answer</p>
+    <div *ngIf="isQuizFinished" class="quiz-result center-elements">
+      <h1>Resultado:</h1>
+      <h1>{{ result }}</h1>
     </div>
   </div>
   

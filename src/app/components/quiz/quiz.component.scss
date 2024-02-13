@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .quiz-container {
@@ -46,14 +47,15 @@
 .quiz-options {
     margin: auto;
     margin-bottom: 20px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .btn-option {
     background-color: transparent;
     border-radius: 10px;
     border: 1px solid #18AB29;
-    width: 50%;
-    display: inline-block;
+    width: 48%;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
@@ -78,4 +80,5 @@
     border-radius: 10px;
     padding: 30px;
     flex-direction: column;
+    gap: 20px;
 }
